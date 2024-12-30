@@ -763,6 +763,16 @@
       "output" : "-10.0"
    },
    {
+      "query" : "number(\".1E2\")",
+      "input" : "{}",
+      "output" : "10.0"
+   },
+   {
+      "query" : "number(\"-.1E2\")",
+      "input" : "{}",
+      "output" : "-10.0"
+   },
+   {
       "query" : "number(\"0.1e-2\")",
       "input" : "{}",
       "output" : "0.001"
@@ -836,6 +846,16 @@
       "query" : "number(\"-0.513\")",
       "input" : "{}",
       "output" : "-0.513"
+   },
+   {
+      "query" : "number(\"-.513\")",
+      "input" : "{}",
+      "output" : "-0.513"
+   },
+   {
+      "query" : "number(\".513\")",
+      "input" : "{}",
+      "output" : "0.513"
    },
    {
       "input" : "{}",
