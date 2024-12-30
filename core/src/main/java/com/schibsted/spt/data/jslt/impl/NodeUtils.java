@@ -159,8 +159,6 @@ public class NodeUtils {
     int intStart = pos;
 
     int endInteger = scanDigits(number, pos);
-    if (endInteger == pos)
-      return null;
     if (endInteger == number.length()) {
       if (number.length() < 10)
         return new IntNode(Integer.parseInt(number));
@@ -172,7 +170,12 @@ public class NodeUtils {
 
     // since there's stuff after the initial integer it must be either
     // the decimal part or the exponent
-    long intPart = Long.parseLong(number.substring(intStart, endInteger));
+    long intPart;
+    if (endInteger == pos)
+      intPart = 0; // this means there was no zero before the period
+    else
+      intPart = Long.parseLong(number.substring(intStart, endInteger));
+
     pos = endInteger;
     double value = intPart * sign;
 
